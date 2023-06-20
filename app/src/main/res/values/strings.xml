@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Imgur</string>
+
+    <!-- Errors -->
+    <string name="unknown_error">Something went wrong! Please try again.</string>
+    <string name="no_network_error">No internet connection, Make sure Wi-Fi or cellular data is turned on then try again.</string>
+    <string name="bad_connection">Looks like the server is taking to long to respond, please try again in sometime.</string>
+    <string name="invalid_url_error">Invalid URL</string>
+
+</resources>
