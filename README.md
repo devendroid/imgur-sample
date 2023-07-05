@@ -31,11 +31,7 @@ eg:- `https://github.com/devendroid/imgur-sample.git`
  |   └────📂repository
  |   └────📂source 
  |   |     └────📂local 
- |   |     └────📂network 
- |   |    |──policy.dart
- |   |    |──pest_client.dart
- |   |    |──rest_client.g.dart
- |   |    |──perver_error.dart 
+ |   |     └────📂network  
  |   └────📂dto
  |───📂ui
  |    └────📂home
