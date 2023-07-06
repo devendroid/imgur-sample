@@ -81,8 +81,8 @@ class ListItemViewHolder(private val binding: ItemImageListBinding) :
 
     fun bind(data: Data) {
         binding.tvTitle.text = data.title
-        binding.iv.load(data.images?.first()?.link)
-        binding.tvYear.text = data.datetime.toDDMMYYhhmmaa()
+        binding.iv.load(data.images?.firstOrNull()?.link)
+        binding.tvYear.text = (data.datetime * 1000).toDDMMYYhhmmaa()
         val imgCount = data.imagesCount?.minus(1)?:0
         binding.tvCount.text = if( imgCount > 0 ) "+$imgCount" else ""
     }
@@ -93,8 +93,8 @@ class GridItemViewHolder(private val binding: ItemImageGridBinding) :
 
     fun bind(data: Data) {
         binding.tvTitle.text = data.title
-        binding.iv.load(data.images?.first()?.link)
-        binding.tvYear.text = data.datetime.toDDMMYYhhmmaa()
+        binding.iv.load(data.images?.firstOrNull()?.link)
+        binding.tvYear.text = (data.datetime * 1000).toDDMMYYhhmmaa()
         val imgCount = data.imagesCount?.minus(1)?:0
         binding.tvCount.text = if( imgCount > 0 ) "+$imgCount" else ""
     }
