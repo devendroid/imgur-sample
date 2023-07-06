@@ -1,7 +1,7 @@
 package com.devs.imgur.ui.search
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.devs.imgur.data.repository.ImageRepository
@@ -21,21 +21,22 @@ class SearchViewModel @Inject constructor(
 ) : ViewModel() {
 
     var isOffline = false
-    private val imageState = MutableLiveData<Resource<Gallery>>()
+    private val _imageState = MutableLiveData<Resource<Gallery>>()
 
-    fun imageState() = imageState
+    val imageState : LiveData<Resource<Gallery>>
+    get() = _imageState
 
     fun searchImage(query : String) {
         if (isOffline) {
             // No network connection
-            imageState.value =
+            _imageState.value =
                 Resource.error(null, networkError = NetworkError.NO_CONNECTIVITY)
             return
         }
-        imageState.value = Resource.loading(null)
+        _imageState.value = Resource.loading(null)
         viewModelScope.launch {
             val resource = imageRepository.searchImage(query)
-            imageState.postValue(resource)
+            _imageState.postValue(resource)
         }
     }
 }

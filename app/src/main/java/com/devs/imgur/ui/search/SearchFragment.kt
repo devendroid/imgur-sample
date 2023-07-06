@@ -44,7 +44,7 @@ class SearchFragment : BaseFragment() {
 
         init()
 
-        viewModel.imageState().observe(viewLifecycleOwner, Observer { resource ->
+        viewModel.imageState.observe(viewLifecycleOwner, Observer { resource ->
             when (resource.status) {
                 Status.LOADING -> {
                     showLoader()
