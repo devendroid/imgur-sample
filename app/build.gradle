@@ -86,11 +86,14 @@ dependencies {
     implementation "com.google.dagger:hilt-android:2.51.1"
     kapt "com.google.dagger:hilt-compiler:2.51.1"
 
-    // Dependencies for local unit tests
+    // Unit tests
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'junit:junit:4.13.2'
+    testImplementation "io.mockk:mockk:1.13.5"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3"
+    testImplementation "androidx.arch.core:core-testing:2.2.0"
 
     // AndroidX Test - JVM testing
+    androidTestImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.2.1'
 
     // AndroidX Test - Instrumented testing
